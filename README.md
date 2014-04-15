@@ -44,6 +44,7 @@ Task, owner and status:
 5. Routing app with 3 main view: list, detail and compare (unknown - unplanned)
 6. Prepare data of phones in json format
 7. Intergrate all partial (modules)
-8. Implement unit test/spec (recommend using Jasmine and Karma)
-9. Implement end-to-end testing (recommend using Jasmine and Protractor for end-to-end testing)
-10. up coming.....
+8. Internationalization/Localization (i18n and l10n)
+9. Implement unit test/spec (recommend using Jasmine and Karma)
+10. Implement end-to-end testing (recommend using Jasmine and Protractor for end-to-end testing)
+11. up coming.....
