@@ -1,0 +1,16 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "angular-smartphone-comparison",
+  "description": "A tutorial application for AngularJS",
+  "repository": "https://github.com/hungpham/SmartPhone",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "http-server -p 8000",    
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  }
+}
