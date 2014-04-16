@@ -25,8 +25,9 @@ Score factors and weighting points:
 Member: 
 ==========
 - Hung.Pham
-- Member 2
-- Menber 3
+- Trinh.Pham
+- Nha.Ho
+- Member xxx
 
 
 Task, owner and status: 
@@ -37,10 +38,10 @@ Task, owner and status:
   - Implement partial layouts static html: list and sort, search, phone detail and also comparing two or multiple the phones (unknown - unplanned)
 3. Define static json scheme  (unknown - unplanned)
 4. Implement partial layout dynamic html base angular (unknown - unplanned)
-  4.1 list and sort phone
-  4.2 search phone
-  4.3 detail of phone
-  4.4 compare two or multiple phones (the hardest)
+  - 4.1 list and sort phone
+  - 4.2 search phone
+  - 4.3 detail of phone
+  - 4.4 compare two or multiple phones (the hardest)
 5. Routing app with 3 main view: list, detail and compare (unknown - unplanned)
 6. Prepare data of phones in json format
 7. Intergrate all partial (modules)
