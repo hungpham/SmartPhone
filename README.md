@@ -25,26 +25,29 @@ Score factors and weighting points:
 Member: 
 ==========
 - Hung.Pham
-- Member 2
-- Menber 3
+- Trinh.Pham
+- Nha.Ho
+- Dung.Tran
+- Member xxx
 
 
 Task, owner and status: 
 ==========
-1. Register project and create repository (hp - in progress)
-2. Create wireframe/layout for single page application: 
-  - UI base on Bootstrap  (unknown - unplanned)
-  - Implement partial layouts static html: list and sort, search, phone detail and also comparing two or multiple the phones (unknown - unplanned)
-3. Define static json scheme  (unknown - unplanned)
-4. Implement partial layout dynamic html base angular (unknown - unplanned)
-  4.1 list and sort phone
-  4.2 search phone
-  4.3 detail of phone
-  4.4 compare two or multiple phones (the hardest)
-5. Routing app with 3 main view: list, detail and compare (unknown - unplanned)
-6. Prepare data of phones in json format
-7. Intergrate all partial (modules)
-8. Internationalization/Localization (i18n and l10n)
-9. Implement unit test/spec (recommend using Jasmine and Karma)
-10. Implement end-to-end testing (recommend using Jasmine and Protractor for end-to-end testing)
-11. up coming.....
+1. Register project and create repository, task breakdown (H.P - in progress)
+2. Create wireframe/layout for single page application: (Dung.Tran - planned)
+  - UI base on Bootstrap
+  - Implement partial layouts static html: list and sort, search, phone detail and also comparing two or multiple the phones
+3. Build controllers for app  (Trinh.Pham + Hung.Pham- planned)
+4. Implement partial layout dynamic html base angular (Nha.Ho + Dung.Tran - unplanned)
+  - 4.1 list and sort phone
+  - 4.2 search phone
+  - 4.3 detail of phone
+  - 4.4 compare two phones(advance: multiple phones - the hardest)
+5. Define static json scheme  (Trinh.Pham - planned)
+6. Routing app with 3 main view: list, detail and compare (unknown - unplanned) (Hung.Pham - planned)
+7. Prepare data of phones in json format (Trinh.Pham - planned)
+8. Intergrate all partial (modules) (Hung.Pham - planned)
+9. Internationalization/Localization (i18n and l10n) (Nha.Ho - planned)
+10. Implement unit test/spec (recommend using Jasmine and Karma) (Hung.Pham - planned)
+11. Implement end-to-end testing (recommend using Jasmine and Protractor for end-to-end testing) (Trinh.Pham - planned)
+12. up coming.....
