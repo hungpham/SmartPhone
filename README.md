@@ -29,7 +29,6 @@ Member:
 - Nha.Ho
 - Dung.Tran
 - Khoa
-- Khoa
 
 
 Task, owner and status: 
