@@ -8,11 +8,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
   function($scope, Phone) {
     $scope.phones = Phone.query();
     /*above is shortern of bellow:*/
-    /*
+    
     $http.get('phones/phones.json').success(function(data) {
       $scope.phones = data;
     });
-    */
+    
 
     $scope.orderProp = 'age';
     console.log($scope.phones);

@@ -38,7 +38,7 @@
   font-size: 13px;
   font-weight: 400;
   display: block;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: #5a6a7a;
 }
 .wrap-compare{padding-bottom: 40px;}
