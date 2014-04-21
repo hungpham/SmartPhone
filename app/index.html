@@ -1,29 +1,183 @@
 <!doctype html>
 <html lang="en" ng-app="phonecatApp">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Google Phone Gallery</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/animations.css">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SmartPhone Comparison</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    
   <script src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
   <script src="js/vendor/angular/angular.js"></script>
   <script src="js/vendor/angular/angular-animate.js"></script>
   <script src="js/vendor/angular/angular-route.js"></script>
   <script src="js/vendor/angular/angular-resource.js"></script>
+  <script src="js/vendor/angular/i18n/angular-locale_vi-vn.js"></script>
+  <script src="js/vendor/angular/i18n/angular-locale_en-us.js"></script>
   <script src="js/app.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
 </head>
+
 <body>
 
+  <div class="locale">
+    <strong>Test locale:</strong> <br />
+  {{ 1000 | currency }}<br />
+  {{ 2013/12/20 }}<br />
+  </div>
+  <div class="locale l10n">
+    <strong>Test l10n:</strong> <br />
+ <span l10n-text="myPage.myString"></span>
+  </div>
   <div class="view-container">
     <div ng-view class="view-frame"></div>
   </div>
+    <div class="wrapper-page">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">                    
+                    <h1 class="text-hide">SmartPhone</h1>
+                    <a class="navbar-brand" href="#">SmartPhone</a>
+                </div>
+                <div class="navbar-collapse collapse top-right-mb">
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Language <span class="caret"></span>
+                      </button>
+ 				    <ul class="dropdown-menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">France</a></li>
+                        <li><a href="#">Vietnam</a></li>
+                    </ul>
+                    </div>
+                    <form class="navbar-form navbar-right" role="form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search" class="form-control">
+                            <button type="submit" class="btn btn-success">Search</button>
+                        </div>  
+                    </form>
+                    
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="container">
+            <!-- Example row of columns -->
+             
+              <div class="row title-top">
+                <div class="col-xs-12 col-md-8">
+                   <h2>FREE SHIPPING ON ALL OF OUR BEST PHONES2</h2>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                        Featured <span class="caret"></span> 
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
 
+              <div class="row wrap-compare">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h3>SELECT TWO PHONES TO COMPARE</h3>
+                        <div class="form-group"> 
+                            <div class="inputs-container"> 
+                                <div class="input-container"> 
+                                    <input type="text" class="form-control product1" placeholder="phone1">
+                                    <div class="error-message" id="product1-error"></div> 
+                                </div> 
+                                <div class="vs">vs</div> 
+                                <div class="input-container"> 
+                                    <input type="text" class="form-control product2" placeholder="phone2">
+                                    <div class="error-message" id="product2-error"></div> 
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <button class="large" type="submit" value="compare">Compare</button>
+                            </div>     
+
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+              </div>
+
+              <div class="row product-card">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp1.jpg" alt="" />
+                        <span class="model">Canvas Knight</span>
+                        <small><span class="mfr">Micromax</span></small>
+                    </div>                      
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp2.jpg" alt="" />
+                        <span class="model">G2</span>
+                        <small><span class="mfr">GL</span></small>
+                    </div>                      
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp3.jpg" alt="" />
+                        <span class="model">Galaxy Grand 2</span>
+                        <small><span class="mfr">Samsung</span></small> 
+                    </div> 
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp4.jpg" alt="" />
+                        <span class="model">Galaxy Grand Neo</span>
+                        <small><span class="mfr">Samsung</span></small>
+                    </div>  
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp1.jpg" alt="" />
+                        <span class="model">Canvas Knight</span>
+                        <small><span class="mfr">Micromax</span></small>
+                    </div>                      
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp2.jpg" alt="" />
+                        <span class="model">G2</span>
+                        <small><span class="mfr">GL</span></small>
+                    </div>                      
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp3.jpg" alt="" />
+                        <span class="model">Galaxy Grand 2</span>
+                        <small><span class="mfr">Samsung</span></small> 
+                    </div> 
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="item-phone">
+                        <img src="img/phones/sp4.jpg" alt="" />
+                        <span class="model">Galaxy Grand Neo</span>
+                        <small><span class="mfr">Samsung</span></small>
+                    </div>  
+                </div>
+              </div>
+      
+            </div>
+        </div>
+        
+    </div>
 </body>
+
 </html>
