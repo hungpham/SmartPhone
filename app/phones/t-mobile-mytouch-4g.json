@@ -58,6 +58,7 @@
         ], 
         "weight": "156.0 grams"
     }, 
+    "price": 345,
     "storage": {
         "flash": "1100MB", 
         "ram": "768MB"
