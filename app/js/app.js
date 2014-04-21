@@ -12,7 +12,7 @@ var phonecatApp = angular.module('phonecatApp', [
 ]);
 
 phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
+  function($routeProvider) { 
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
