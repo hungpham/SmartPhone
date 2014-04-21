@@ -47,6 +47,7 @@
         "img/phones/motorola-atrix-4g.3.jpg"
     ], 
     "name": "MOTOROLA ATRIX\u2122 4G", 
+    "price": 150,
     "sizeAndWeight": {
         "dimensions": [
             "63.5 mm (w)", 
