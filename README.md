@@ -28,7 +28,8 @@ Member:
 - Trinh.Pham
 - Nha.Ho
 - Dung.Tran
-- Khoakhinh
+- Khoa
+- Khoa
 
 
 Task, owner and status: 
