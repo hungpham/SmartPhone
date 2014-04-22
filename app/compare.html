@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/compare.css">
+
 
   <!-- <script src="js/vendor/jquery/jquery-1.10.2.min.js"></script>-->
   <script src="js/vendor/angular/angular.js"></script>
@@ -22,81 +24,112 @@
   <script src="js/services.js"></script>-->
 </head>
 <body>
-  <div class="compare-page">
-    <div class="row show-grid title">
-      <div class="col-md-6">LG Optimus L9 </div>
-      <div class="col-md-6">Samsung Galaxy Exhibit</div>
+  <div class="wrapper-page">    
+    <!-- header -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">                    
+                <h1 class="text-hide">SmartPhone</h1>
+                <a class="navbar-brand" href="#">SmartPhone</a>
+            </div>
+            <div class="navbar-collapse collapse top-right-mb">
+                <div class="btn-group">
+                  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                    Language <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">France</a></li>
+                    <li><a href="#">Vietnam</a></li>
+                  </ul>
+                </div>
+                <form class="navbar-form navbar-right ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search" class="form-control">
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </div>  
+                </form>
+                
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
     </div>
-    <!-- item -->   
-     <div class="row show-grid grid-full text-left parent">
-        <div class="col-md-6">Battery</div>    
-    </div>     
-    <div class="row show-grid grid-full text-align sub">
-        <div class="col-md-6">Talk Time</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">
-         <div class="progress">
-          <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            60%
+  <div class="compare-wrap">
+      <div class="row show-grid product-img">
+        <div class="col-md-6"><img src="img/phones/droid-2-global-by-motorola.0.jpg" alt=""></div>
+        <div class="col-md-6"><img src="img/phones/motorola-defy-with-motoblur.0.jpg" alt=""></div>
+      </div>
+      <div class="row show-grid title">
+        <div class="col-md-6">LG Optimus L9 </div>
+        <div class="col-md-6">Samsung Galaxy Exhibit</div>
+      </div>
+      <!-- item -->   
+       <div class="row show-grid grid-full text-left parent">
+          <div class="col-md-6">Battery</div>    
+      </div>     
+      <div class="row show-grid grid-full text-align sub">
+          <div class="col-md-6">Talk Time</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              60%
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              60%
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            60%
-          </div>
-        </div>
+      <div class="row show-grid grid-full text-align sub">
+          <div class="col-md-6">Standby time (max)</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">336 hours</div>
+        <div class="col-md-6">400 hours</div>
+      </div>
+      <!-- item -->
+      <div class="row show-grid grid-full text-left parent">
+          <div class="col-md-6">Storage and Memory</div>    
+      </div>         
+       <div class="row show-grid grid-full text-align sub">
+          <div class="col-md-6">RAM</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">1GB</div>
+        <div class="col-md-6">2GB</div>
+      </div>   
+      <div class="row show-grid grid-full text-align sub">
+          <div class="col-md-6">Internal Storage</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">32000MB</div>
+        <div class="col-md-6">42000MB</div>
+      </div>
+      <!-- item -->
+      <div class="row show-grid grid-full text-left parent">
+          <div class="col-md-6">Connectivity Network Support</div>    
+      </div>         
+       <div class="row show-grid grid-full text-align sub ">
+          <div class="col-md-6">WiFi</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">802.11 b/g/n</div>
+        <div class="col-md-6">802.11 b/g/n</div>
+      </div>   
+      <div class="row show-grid grid-full text-align sub">
+          <div class="col-md-6">Bluetooth</div>    
+      </div>
+      <div class="row show-grid text-align">
+        <div class="col-md-6">Bluetooth 2.1</div>
+        <div class="col-md-6">Bluetooth 2.1</div>
       </div>
     </div>
-    <div class="row show-grid grid-full text-align sub">
-        <div class="col-md-6">Standby time (max)</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">336 hours</div>
-      <div class="col-md-6">400 hours</div>
-    </div>
-    <!-- item -->
-    <div class="row show-grid grid-full text-left parent">
-        <div class="col-md-6">Storage and Memory</div>    
-    </div>         
-     <div class="row show-grid grid-full text-align sub">
-        <div class="col-md-6">RAM</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">1GB</div>
-      <div class="col-md-6">2GB</div>
-    </div>   
-    <div class="row show-grid grid-full text-align sub">
-        <div class="col-md-6">Internal Storage</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">32000MB</div>
-      <div class="col-md-6">42000MB</div>
-    </div>
-    <!-- item -->
-    <div class="row show-grid grid-full text-left parent">
-        <div class="col-md-6">Connectivity Network Support</div>    
-    </div>         
-     <div class="row show-grid grid-full text-align sub ">
-        <div class="col-md-6">WiFi</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">802.11 b/g/n</div>
-      <div class="col-md-6">802.11 b/g/n</div>
-    </div>   
-    <div class="row show-grid grid-full text-align sub">
-        <div class="col-md-6">Bluetooth</div>    
-    </div>
-    <div class="row show-grid text-align">
-      <div class="col-md-6">Bluetooth 2.1</div>
-      <div class="col-md-6">Bluetooth 2.1</div>
-    </div>
-  
-    
-
-
   </div>
   
 </body>
