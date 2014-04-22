@@ -1,7 +1,6 @@
-jhj
 <div class="row">
   <ul class="product-card">
-    <li class="col-xs-6 col-sm-3" ng-repeat="phone in phones">
+    <li class="col-xs-6 col-sm-3" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
         <div class="item-phone">
             <a href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}" alt="" /></a>
             <a href="#/phones/{{phone.id}}"><span class="model">{{phone.name}}</span></a>
@@ -11,4 +10,6 @@ jhj
         </div>
     </li>
   </ul>
-</div>
+</div>  
+
+
