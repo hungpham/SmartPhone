@@ -4,131 +4,134 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>SmartPhone Comparison</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Google Phone Gallery</title>
+    
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    
-  <script src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
-  <script src="js/vendor/angular/angular.js"></script>
-  <script src="js/vendor/angular/angular-animate.js"></script>
-  <script src="js/vendor/angular/angular-route.js"></script>
-  <script src="js/vendor/angular/angular-resource.js"></script>
-  <script src="js/vendor/angular/i18n/angular-locale_vi-vn.js"></script>
-  <script src="js/vendor/angular/i18n/angular-locale_en-us.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
+
+    <script src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/angular/angular.js"></script>
+    <script src="js/vendor/angular/angular-animate.js"></script>
+    <script src="js/vendor/angular/angular-route.js"></script>
+    <script src="js/vendor/angular/angular-resource.js"></script>
+    <script src="js/vendor/angular/i18n/angular-locale_vi-vn.js"></script>
+    <script src="js/vendor/angular/i18n/angular-locale_en-us.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+
 </head>
 
 <body>
-
-  <div class="locale">
-    <strong>Test locale:</strong> <br />
-  {{ 1000 | currency }}<br />
-  {{ 2013/12/20 }}<br />
-  </div>
-  <div class="locale l10n">
-    <strong>Test l10n:</strong> <br />
- <span l10n-text="myPage.myString"></span>
-  </div>
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
+ 
     <div class="wrapper-page">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="PhoneSearchCtrl">
             <div class="container">
-                <div class="navbar-header">                    
+                <div class="navbar-header">
                     <h1 class="text-hide">SmartPhone</h1>
                     <a class="navbar-brand" href="#">SmartPhone</a>
                 </div>
                 <div class="navbar-collapse collapse top-right-mb">
                     <div class="btn-group">
-                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                        Language <span class="caret"></span>
-                      </button>
- 				    <ul class="dropdown-menu">
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">France</a></li>
-                        <li><a href="#">Vietnam</a></li>
-                    </ul>
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                            Language
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">English</a>
+                            </li>
+                            <li><a href="#">France</a>
+                            </li>
+                            <li><a href="#">Vietnam</a>
+                            </li>
+                        </ul>
                     </div>
+
                     <form class="navbar-form navbar-right" role="form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search" class="form-control">
-                            <button type="submit" class="btn btn-success">Search</button>
-                        </div>  
+                        <div class="form-group"> 
+                            <!-- <span class="glyphicon glyphicon-search search-icon"></span> -->
+                            <input type="text" placeholder="Search" class="form-control" ng-model="query">
+                            <button type="submit" class="btn btn-success" ng-click="search()">Search</button>
+                        </div>
                     </form>
-                    
+
                 </div>
                 <!--/.navbar-collapse -->
             </div>
         </div>
+
         <div class="jumbotron">
             <div class="container">
-            <!-- Example row of columns -->
-             
-              <div class="row title-top">
-                <div class="col-xs-12 col-md-8">
-                   <h2>FREE SHIPPING ON ALL OF OUR BEST PHONES2</h2>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <div class="btn-group">
-                      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-                        Featured <span class="caret"></span> 
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                      </ul>
+                <!-- Example row of columns -->
+
+                <div class="row title-top">
+                    <div class="col-xs-12 col-md-8">
+                        <h2>FREE SHIPPING ON ALL OF OUR BEST PHONES</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="btn-group" ng-controller="PhoneSortCtrl">
+                            <!-- <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                                Featured
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a>
+                                </li>
+                                <li><a href="#">Another action</a>
+                                </li>
+                                <li><a href="#">Something else here</a>
+                                </li>
+                            </ul> -->
+                            <select ng-model="orderProp" ng-change="sort()" class="form-control" ng-options="key as value for (key,value) in orderProps"></select>
+                            <!-- <option value="name" ng-selected="">Alphabetical</option>
+                                 <option value="age">Newest</option>-->
+                        </div>
                     </div>
                 </div>
-              </div>
 
-              <div class="row wrap-compare">
+                <div class="row wrap-compare">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <h3>SELECT TWO PHONES TO COMPARE</h3>
-                        <div class="form-group"> 
-                            <div class="inputs-container"> 
-                                <div class="input-container"> 
+                        <div class="form-group">
+                            <div class="inputs-container">
+                                <div class="input-container">
                                     <input type="text" class="form-control product1" placeholder="phone1">
-                                    <div class="error-message" id="product1-error"></div> 
-                                </div> 
-                                <div class="vs">vs</div> 
-                                <div class="input-container"> 
-                                    <input type="text" class="form-control product2" placeholder="phone2">
-                                    <div class="error-message" id="product2-error"></div> 
+                                    <div class="error-message" id="product1-error"></div>
                                 </div>
-                            </div> 
+                                <div class="vs">vs</div>
+                                <div class="input-container">
+                                    <input type="text" class="form-control product2" placeholder="phone2">
+                                    <div class="error-message" id="product2-error"></div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <button class="large" type="submit" value="compare">Compare</button>
-                            </div>     
+                            </div>
 
                         </div>
                     </div>
                     <div class="col-md-2"></div>
-              </div>
-
-              <div class="row product-card" ng-controller="PhoneListCtrl">
-                <div class="col-xs-6 col-sm-3" ng-repeat="phone in phones">
-                    <div class="item-phone">
-                        <img src="{{phone.imageUrl}}" alt="{{phone.name}}" />
-                        <span class="model">{{phone.name}}</span>
-                        <small><span class="mfr">{{phone.snippet}}</span></small>
-                    </div>                      
                 </div>
-              </div>
-      
+
+                <div ng-view class="view-frame"></div>
+                
+
             </div>
         </div>
-        
+
     </div>
+
+
+    
+
 </body>
 
 </html>
