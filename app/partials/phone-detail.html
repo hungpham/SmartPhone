@@ -13,44 +13,43 @@
   <li ng-repeat="img in phone.images">
     <img ng-src="{{img}}" ng-click="setImage(img)">
   </li>
-</ul>
-
+</ul> 
 <ul class="specs">
   <li>
-    <span>Availability and Networks</span>
+    <span>{{ 'availability_networks' | translate}}</span>
     <dl>
       <dt>Availability</dt>
       <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
     </dl>
   </li>
   <li>
-    <span>Battery</span>
+    <span>{{ 'battery' | translate }}</span>
     <dl>
-      <dt>Type</dt>
+      <dt>{{ 'type' | translate }}</dt>
       <dd>{{phone.battery.type}}</dd>
-      <dt>Talk Time</dt>
+      <dt>{{ 'talk_time' | translate }}</dt>
       <dd>{{phone.battery.talkTime}}</dd>
-      <dt>Standby time (max)</dt>
+      <dt>{{ 'standby_time' | translate }}</dt>
       <dd>{{phone.battery.standbyTime}}</dd>
     </dl>
   </li>
   <li>
-    <span>Storage and Memory</span>
+    <span>{{ 'storage_memory' | translate }}</span>
     <dl>
-      <dt>RAM</dt>
+      <dt>{{ 'ram' | translate }}</dt>
       <dd>{{phone.storage.ram}}</dd>
-      <dt>Internal Storage</dt>
+      <dt>{{ 'internal_storage' | translate }}</dt>
       <dd>{{phone.storage.flash}}</dd>
     </dl>
   </li>
   <li>
-    <span>Connectivity</span>
+    <span>{{ 'connectivity' | translate }}</span>
     <dl>
-      <dt>Network Support</dt>
+      <dt>{{ 'network_support' | translate }}</dt>
       <dd>{{phone.connectivity.cell}}</dd>
-      <dt>WiFi</dt>
+      <dt>{{ 'wifi' | translate }}</dt>
       <dd>{{phone.connectivity.wifi}}</dd>
-      <dt>Bluetooth</dt>
+      <dt>{{ 'bluetooth' | translate }}</dt>
       <dd>{{phone.connectivity.bluetooth}}</dd>
       <dt>Infrared</dt>
       <dd>{{phone.connectivity.infrared | checkmark}}</dd>

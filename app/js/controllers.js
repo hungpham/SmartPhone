@@ -2,17 +2,18 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.translate']);
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
+phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone','$http', 
+  function($scope, Phone, $http) {
+    console.log(11);
     $scope.phones = Phone.query();
     /*above is shortern of bellow:*/
-    /*
+    
     $http.get('phones/phones.json').success(function(data) {
       $scope.phones = data;
     });
-    */
+    
 
     $scope.orderProp = 'age';
     console.log($scope.phones);
@@ -47,3 +48,42 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
     }
     
   }]);
+
+  phonecatControllers.config(function ($translateProvider) {       
+      $translateProvider.useStaticFilesLoader({
+      prefix: 'js/lang-',
+      suffix: '.json'
+    });
+      
+      $translateProvider.preferredLanguage('en');
+      });
+
+  // phonecatControllers.controller('langCtrl', function ($scope, $translate) {
+  //   $scope.changeLanguage = function (key) {
+  //     $translate.use(key);
+  //   };
+  // });
+
+  phonecatControllers.controller('langCtrl', 
+    function($scope, $translate){
+
+      $scope.languages= [
+          {
+            "id": "en",
+            "name": "English"
+          },
+          {
+            "id": "fr",            
+            "name": "France"            
+          },
+        ];    
+
+      $scope.myOption = $scope.languages[0];
+      
+      $scope.changeLanguage = function(key) {
+        key = $scope.myOption.id;
+        // console.log(key);
+        $translate.use(key);
+      };
+        
+  })

@@ -1,33 +1,34 @@
 body{
 	background-color: #eee;
 }
+.compare-wrap{padding-top: 60px; padding-bottom: 30px;}
 .grid-full .col-md-6{
 	width: 100%;
 }
 .text-align, .show-grid.title{
 	text-align: center;		
 }
-.compare-page .show-grid [class^=col-] {
+.compare-wrap .show-grid [class^=col-] {
 	background-color: #fff;
 	color: #333;
 	border: 1px solid #e1e1e8;
 	border-top: none;
 }
-.compare-page .show-grid{ margin-bottom: 0;}
+.compare-wrap .show-grid{ margin-bottom: 0;}
 .text-left .col-md-6{ padding-left: 20px;}
-.compare-page .row{ margin: 0;}
+.compare-wrap .row{ margin: 0;}
 .progress-bar{ color: #000; margin-bottom: 0;}
-.parent .col-md-6{ background-color: #fff !important; font-weight: bold}
+.parent .col-md-6{ background-color: #fff !important; font-weight: bold; font-size: 16px;}
 .sub .col-md-6{ font-weight: bold;  background-color: #eee !important; }
 .progress .right{ float: right; }
 
 .show-grid.title{
 	text-transform: uppercase;
-	font-size: 18px;
+	font-size: 20px;
 	border-top: 1px solid #e1e1e8;	
 
 }
 .show-grid.title .col-md-6{ 
-	background-color: #eee !important;	
-	
+	background-color: #eee !important;		
 }
+.product-img .col-md-6{ text-align: center; padding-bottom: 48px;}

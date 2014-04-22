@@ -1,0 +1,21 @@
+{
+	"availability_networks": "Availability and Networks",
+	"availability": "Availability",
+	"battery": "Battery",
+	"type": "Type",
+	"talk_time": "Talk Time",
+	"standby_time": "Standby time (max)",
+	"storage_memory": "Storage and Memory",
+	"ram": "RAM",
+	"internal_storage": "Internal Storage",
+	"connectivity": "Connectivity",
+	"network_support": "Network Support",
+	"wifi": "WiFi",
+	"bluetooth": "Bluetooth",
+	"infrared": "Infrared",
+	"gps": "GPS",
+	"android": "Android",
+	"os_version": "OS Version",
+	"ui" : "UI",
+	
+}
