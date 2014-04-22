@@ -4,8 +4,7 @@
 
 var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.translate']);
 
-  function($scope, Phone) {
-  function($scope, Phone, $http) {
+  phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', '$http', function($scope, Phone, $http) {
     //console.log()
     $scope.phones = Phone.query();
     /*above is shortern of bellow:*/
