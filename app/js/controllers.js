@@ -79,8 +79,8 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
 
   $scope.orderProp = 'age';
   $scope.orderProps = {
-    'alphabet':'Alphabetical',
-    'age':'Numerical'
+    'name':'Alphabetical',
+    'age':'Newest'
   };
   
   // $scope.search = function(){

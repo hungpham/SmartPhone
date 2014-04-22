@@ -16,5 +16,8 @@
 	"gps": "GPS",
 	"android": "Android",
 	"os_version": "OS Version",
-	"ui" : "UI"	
+	"ui" : "UI",
+	"title_top_home":"abcfr",
+	"select_two_phones":"Sélectionnez deux téléphones à comparer",
+	"compare":"comparer"
 }

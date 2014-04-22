@@ -42,19 +42,15 @@
                     <a class="navbar-brand" href="#">SmartPhone</a>
                 </div>
                 <div class="navbar-collapse collapse top-right-mb">
-                    <div class="btn-group">
-                     <!--  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                        Language <span class="caret"></span>
-                      </button> -->
-
-                    <div ng-controller="langCtrl">
-                        <select ng-change="changeLanguage()" ng-model="myOption"
-                      ng-options="opt as opt.name for opt in languages">
-                          <option>--</option>                  
-                        </select>
-
-                        <!-- "selected is" {{ myOption.name }}. -->
-                  </div>
+                    <div class="btn-group btn-sm">
+                     
+                        <div ng-controller="langCtrl">
+                            <select ng-change="changeLanguage()" ng-model="myOption"
+                          ng-options="opt as opt.name for opt in languages" class="form-control">
+                              <option>--</option>                  
+                            </select>
+                            <!-- "selected is" {{ myOption.name }}. -->
+                        </div>
  				             
                     </div>
 
@@ -72,30 +68,16 @@
         </div>
 
         <div class="jumbotron">
-            <div class="container">
+            <div class="container"> 
                 <!-- Example row of columns -->
 
                 <div class="row title-top">
                     <div class="col-xs-12 col-md-8">
-                        <h2>FREE SHIPPING ON ALL OF OUR BEST PHONES</h2>
+                        <h2>{{'title_top_home' | translate}}</h2>
                     </div>
                     <div class="col-xs-6 col-md-4">
                         <div class="btn-group" ng-controller="PhoneSortCtrl">
-                            <!-- <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-                                Featured
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a>
-                                </li>
-                                <li><a href="#">Another action</a>
-                                </li>
-                                <li><a href="#">Something else here</a>
-                                </li>
-                            </ul> -->
                             <select ng-model="orderProp" ng-change="sort()" class="form-control" ng-options="key as value for (key,value) in orderProps"></select>
-                            <!-- <option value="name" ng-selected="">Alphabetical</option>
-                                 <option value="age">Newest</option>-->
                         </div>
                     </div>
                 </div>
@@ -103,7 +85,7 @@
                 <div class="row wrap-compare">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <h3>SELECT TWO PHONES TO COMPARE</h3>
+                        <h3>{{'select_two_phones' | translate}}</h3>
                         <div class="form-group">
                             <div class="inputs-container">
                                 <div class="input-container">
@@ -117,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <button class="large" type="submit" value="compare">Compare</button>
+                                <button class="large" type="submit" value="compare">{{'compare' | translate}}</button>
                             </div>
 
                         </div>
