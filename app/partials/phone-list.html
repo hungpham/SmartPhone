@@ -16,7 +16,9 @@
                 </div>
             </div>
             <div class="row">
-                <button class="large" type="submit" value="compare">{{'compare' | translate}}</button>
+                <!-- <button class="large" type="submit" value="compare">{{'compare' | translate}}</button>  -->
+                <a href="#/phone1/{{phone1.phone_id}}/phone2/{{phone2.phone_id}}" class="btn btn-primary btn-lg" role="button">{{'compare' | translate}}</a>
+                
             </div>
 
         </div>
@@ -32,8 +34,8 @@
             <a href="#/phones/{{phone.id}}"><span class="model">{{phone.name}}</span></a>
             <small>
                 <span class="mfr">{{phone.snippet}}</span> 
-            </small>
-            <input type="checkbox" ng-model="phone.confirmed" ng-change="phoneSelect(phone)" class="choose-phone" id="{{phone.id}}">
+            </small> 
+            <input type="checkbox" ng-disabled="phone1.phone_id && phone2.phone_id && (phone.id != phone1.phone_id && phone.id != phone2.phone_id)" ng-model="phone.confirmed" ng-change="phoneSelect(phone)" class="choose-phone" id="{{phone.id}}"> 
         </div>
     </li>
   </ul>
