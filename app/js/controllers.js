@@ -11,10 +11,21 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
     
     $http.get('phones/phones.json').success(function(data) {
       $scope.phones = data;
+
     });
     
     $scope.orderProp = 'age'; 
     //console.log($scope.phones);   
+    /*default value for compare*/
+
+    $scope.phone1 = {
+      phone_name: '',
+      phone_id: ''
+    };
+    $scope.phone2 = {
+      phone_name: '',
+      phone_id: ''
+    };
 
     $scope.$on('search', function(e, query) {
       // console.log(e);
@@ -28,6 +39,32 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
       $scope.orderProp = orderProp;
     });
 
+    //$scope.confirmed = false;
+    $scope.phoneSelect = function(phone){   
+      console.log(phone.confirmed); 
+
+      if(phone.confirmed == true && $scope.phone1.phone_id == ''){
+
+        $scope.phone1.phone_id = phone.id;
+        $scope.phone1.phone_name = phone.name;
+      }
+      else if(phone.confirmed == true && $scope.phone2.phone_id == ''){
+
+        $scope.phone2.phone_id = phone.id;
+        $scope.phone2.phone_name = phone.name;
+      } 
+      else if(phone.confirmed == false && $scope.phone1.phone_id == phone.id ){
+
+        $scope.phone1.phone_id = '';
+        $scope.phone1.phone_name = '';
+      } 
+      else if(phone.confirmed == false && $scope.phone2.phone_id == phone.id){
+
+        $scope.phone2.phone_id = ''; 
+        $scope.phone2.phone_name = '';
+      }  
+     
+    }
 
   }]);
 
@@ -39,7 +76,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
-    }
+    } 
   }]);
 
 phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'Phone',
@@ -79,8 +116,8 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
 
   $scope.orderProp = 'age';
   $scope.orderProps = {
-    'alphabet':'Alphabetical',
-    'age':'Numerical'
+    'name':'Alphabetical',
+    'age':'Newest'
   };
   
   // $scope.search = function(){
