@@ -1,11 +1,8 @@
-body{
-	background-color: #eee;
-}
 .compare-wrap{padding-top: 60px; padding-bottom: 30px;}
-.grid-full .col-md-6{
+.compare-wrap .grid-full .col-md-6{
 	width: 100%;
 }
-.text-align, .show-grid.title{
+.compare-wrap .text-align, .compare-wrap .show-grid.title{
 	text-align: center;		
 }
 .compare-wrap .show-grid [class^=col-] {
@@ -15,20 +12,19 @@ body{
 	border-top: none;
 }
 .compare-wrap .show-grid{ margin-bottom: 0;}
-.text-left .col-md-6{ padding-left: 20px;}
+.compare-wrap .text-left .col-md-6{ padding-left: 20px;}
 .compare-wrap .row{ margin: 0;}
-.progress-bar{ color: #000; margin-bottom: 0;}
-.parent .col-md-6{ background-color: #fff !important; font-weight: bold; font-size: 16px;}
-.sub .col-md-6{ font-weight: bold;  background-color: #eee !important; }
-.progress .right{ float: right; }
-
-.show-grid.title{
+.compare-wrap .progress-bar{ color: #000; margin-bottom: 0;}
+.compare-wrap .progress{ margin: 10px;}
+.compare-wrap .parent .col-md-6{ background-color: #fff !important; font-weight: bold; font-size: 16px;}
+.compare-wrap .sub .col-md-6{ font-weight: bold;  background-color: #eee !important; }
+.compare-wrap .progress .right{ float: right; }
+.compare-wrap .show-grid.title{
 	text-transform: uppercase;
 	font-size: 20px;
 	border-top: 1px solid #e1e1e8;	
-
 }
-.show-grid.title .col-md-6{ 
+.compare-wrap .show-grid.title .col-md-6{ 
 	background-color: #eee !important;		
 }
-.product-img .col-md-6{ text-align: center; padding-bottom: 48px;}
+.compare-wrap .product-img .col-md-6{ text-align: center; padding-bottom: 48px;}

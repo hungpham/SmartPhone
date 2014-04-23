@@ -2,22 +2,22 @@
 <div class="row wrap-compare">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h3>{{'select_two_phones' | translate}}</h3>
+        <h3>{{'compare_intro' | translate}}</h3>
         <div class="form-group">
             <div class="inputs-container">
                 <div class="input-container">
-                    <input type="text" class="form-control product1" placeholder="phone1" ng-model="phone1.phone_name">
+                    <input type="text" class="form-control product1" placeholder="{{'compare_phone1' | translate}}" ng-model="phone1.phone_name">
                     <div class="error-message" id="product1-error"></div>
                 </div>
                 <div class="vs">vs</div>
                 <div class="input-container">
-                    <input type="text" class="form-control product2" placeholder="phone2" ng-model="phone2.phone_name">
+                    <input type="text" class="form-control product2" placeholder="{{'compare_phone2' | translate}}" ng-model="phone2.phone_name">
                     <div class="error-message" id="product2-error"></div>
                 </div>
             </div>
             <div class="row">
                 <!-- <button class="large" type="submit" value="compare">{{'compare' | translate}}</button>  -->
-                <a href="#/phone1/{{phone1.phone_id}}/phone2/{{phone2.phone_id}}" class="btn btn-primary btn-lg" role="button">{{'compare' | translate}}</a>
+                <a href="#/phone1/{{phone1.phone_id}}/phone2/{{phone2.phone_id}}" class="btn btn-primary btn-lg" role="button">{{'compare_button' | translate}}</a>
                 
             </div>
 
