@@ -17,15 +17,14 @@
 .product-card{text-align: center;}
 .product-card .item-phone{
   border: 1px solid transparent;
-  /*padding-bottom: 10px;*/
   margin-bottom: 30px;
 }
 .product-card .item-phone img{
   border-radius:6px;
 }
 .product-card .item-phone:hover{
-  border-radius:6px;
-  border:1px solid #563d7c;
+  /*border-radius:6px;
+  border:1px solid #563d7c;*/
 }
 .product-card{
   list-style: none;
@@ -34,7 +33,7 @@
 }
 .item-phone{ 
   width: 260px;
-  height: 398px;
+  height: 455px;/*398*/
   overflow: hidden;
 }
 .item-phone a:hover{text-decoration: none;}
@@ -110,5 +109,10 @@
 .navbar-form .search-icon {
   font-size: 15px; 
  /* margin-right: 10px;*/
+}
+.item-phone input[type=checkbox]{
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
 }
 
