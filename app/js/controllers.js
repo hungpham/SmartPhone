@@ -63,7 +63,6 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
         $scope.phone2.phone_id = ''; 
         $scope.phone2.phone_name = '';
       }  
-
      
     }
 

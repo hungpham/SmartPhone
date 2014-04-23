@@ -106,6 +106,18 @@
   font-size: 20px;
   font-weight: 700;
 }
+.wrap-compare .btn-primary{
+  margin: 0 auto;
+  display: block;
+  width: 290px;
+  text-transform: uppercase;
+  background: #5cb85c;
+  color: #fff;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wrap-compare .btn-primary:hover{background: #5cb85c;}
 .navbar-form .search-icon {
   font-size: 15px; 
  /* margin-right: 10px;*/
