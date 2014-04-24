@@ -39,8 +39,8 @@
 .detail-page ul.phone-thumbs{padding: 0}
 .detail-page img.phone{width: auto; height: auto; margin-right: 0; padding: 0; float: none;}
 .detail-page img.phone:first-child { display: inline-block;}
-.container { width: auto;}
-.navbar .container { width: 1170px; }
+/*.container { width: auto;}
+.navbar .container { width: 1170px; }*/
 .jumbotron{padding-left: 0; padding-right: 0;}
 .detail-page .specs{ padding: 10px 0 20px; margin: 20px 0; background-color: #222222; color: #fff !important;}
 .detail-page .specs{ width: 100% }
