@@ -1,17 +1,468 @@
-<div class="container-fluid">
-  <div class="row">
-  <h2>Comparison</h2>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h1>{{phone1.name}}</h1>
-
-      <p>{{phone1.description}}</p>
+<div class="wrapper-page">      
+  <div class="compare-wrap">   
+      <table>
+        <tr class="row show-grid product-img">
+          <td class="col-md-6" align="center" >
+              <img src="img/phones/droid-2-global-by-motorola.0.jpg" alt="">
+          </td>
+          <td class="col-md-6" align="center"><img src="img/phones/motorola-defy-with-motoblur.0.jpg" alt=""></td>
+        </tr>
+        <tr class="row show-grid title">
+          <td class="col-md-6">
+            {{phone1.name}}
+          </td>
+          <td class="col-md-6">
+            {{phone2.name}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_availability_networks' | translate}}
+          </td>         
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_availability' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+            <table>
+              <tr>
+                <td class="col-md-6">
+                  <span  ng-repeat="availability in phone1.availability">
+                    {{availability}}  
+                  </span>
+                  
+                </td>
+              </tr>
+            </table>              
+          </td>
+          <td class="col-md-6">
+            <table>
+              <tr>
+                <td class="col-md-6">
+                  <span  ng-repeat="availability in phone2.availability">
+                    {{availability}}  
+                  </span>
+                </td>
+              </tr>
+            </table>              
+          </td>
+        </tr>
+        <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_battery' | translate}}
+          </td>         
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_type' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.battery.type}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.battery.type}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_talk_time' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.battery.talkTime, phone2.battery.talkTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.battery.talkTime, phone2.battery.talkTime)}}%; background-color:{{valueColor(phone1.battery.talkTime, phone2.battery.talkTime)}};">
+                  {{phone1.battery.talkTime}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.battery.talkTime, phone1.battery.talkTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.battery.talkTime, phone1.battery.talkTime)}}%; background-color:{{valueColor(phone2.battery.talkTime, phone1.battery.talkTime)}};">
+                  {{phone2.battery.talkTime}}
+                </div>
+              </div>
+          </td>
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_standby_time' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.battery.standbyTime, phone2.battery.standbyTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.battery.standbyTime, phone2.battery.standbyTime)}}%; background-color:{{valueColor(phone1.battery.standbyTime, phone2.battery.standbyTime)}};">
+                  {{phone1.battery.standbyTime}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.battery.standbyTime, phone1.battery.standbyTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.battery.standbyTime, phone1.battery.standbyTime)}}%; background-color:{{valueColor(phone2.battery.standbyTime, phone1.battery.standbyTime)}};">
+                  {{phone2.battery.standbyTime}}
+                </div>
+              </div>
+          </td>
+        </tr>
+        <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_storage_memory' | translate}}
+          </td>         
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_ram' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.storage.ram, phone2.storage.ram)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.storage.ram, phone2.storage.ram)}}%; background-color:{{valueColor(phone1.storage.ram, phone2.storage.ram)}};">
+                  {{phone1.storage.ram}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.storage.ram, phone1.storage.ram)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.storage.ram, phone1.storage.ram)}}%; background-color:{{valueColor(phone2.storage.ram, phone1.storage.ram)}};">
+                  {{phone2.storage.ram}}
+                </div>
+              </div>
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_internal_storage' | translate}}
+          </td>
+        </tr>
+       <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.storage.flash, phone2.storage.flash)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.storage.flash, phone2.storage.flash)}}%; background-color:{{valueColor(phone1.storage.flash, phone2.storage.flash)}};">
+                  {{phone1.storage.flash}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.storage.flash, phone1.storage.flash)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.storage.flash, phone1.storage.flash)}}%; background-color:{{valueColor(phone2.storage.flash, phone1.storage.flash)}};">
+                  {{phone2.storage.flash}}
+                </div>
+              </div>
+          </td>
+        </tr>
+        <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_connectivity' | translate}}
+          </td>         
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_network_support' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.connectivity.cell}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.connectivity.cell}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_wifi' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.connectivity.wifi}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.connectivity.wifi}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_bluetooth' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.connectivity.bluetooth}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.connectivity.bluetooth}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_infrared' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.connectivity.infrared)}}">
+              {{phone1.connectivity.infrared | checkmark}}
+          </td>
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.connectivity.infrared)}}">
+              {{phone2.connectivity.infrared | checkmark}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_gps' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.connectivity.gps)}}">
+              {{phone1.connectivity.gps | checkmark}}
+          </td>
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.connectivity.gps)}}">
+              {{phone2.connectivity.gps | checkmark}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_android' | translate}}
+          </td>         
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_os_version' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.android.os}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.android.os}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_ui' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.android.ui}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.android.ui}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_size_weight' | translate}}
+          </td>         
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_dimensions' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">
+            <table>
+              <tr ng-repeat="dim in phone1.sizeAndWeight.dimensions">
+                <td>{{dim}}</td>
+              </tr>
+            </table>
+          </td>
+          <td class="col-md-6">
+            <table>
+              <tr ng-repeat="dim in phone1.sizeAndWeight.dimensions">
+                <td>{{dim}}</td>
+              </tr>
+            </table>
+          </td>          
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_weight' | translate}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}}%; background-color:{{valueColor(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}};">
+                  {{phone1.sizeAndWeight.weight}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}}%; background-color:{{valueColor(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}};">
+                  {{phone2.sizeAndWeight.weight}}
+                </div>
+              </div>
+          </td>
+        </tr>
+         <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_display' | translate}}
+          </td>         
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_screen_size' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.display.screenSize}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.display.screenSize}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_screen_resolution' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.display.screenResolution}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.display.screenResolution}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_touch_screen' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.display.touchScreen)}}">
+              {{phone1.display.touchScreen | checkmark}}
+          </td>
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.display.touchScreen)}}">
+              {{phone2.display.touchScreen | checkmark}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_hardware' | translate}}
+          </td>         
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_cpu' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.hardware.cpu}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.hardware.cpu}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_usb' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.hardware.usb}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.hardware.usb}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_audio_headphone_jack' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.hardware.audioJack}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.hardware.audioJack}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_fm_radio' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.hardware.fmRadio)}}">
+              {{phone1.hardware.fmRadio | checkmark}}
+          </td>
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.hardware.fmRadio)}}">
+              {{phone2.hardware.fmRadio | checkmark}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_accelerometer' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.hardware.accelerometer)}}">
+              {{phone1.hardware.accelerometer | checkmark}}
+          </td>
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.hardware.accelerometer)}}">
+              {{phone2.hardware.accelerometer | checkmark}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-left parent">
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_camera' | translate}}
+          </td>         
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_primary' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.camera.primary}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.camera.primary}}
+          </td>
+        </tr>
+        <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_features' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.camera.features.join(', ')}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.camera.features.join(', ')}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_additional_features' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">
+              {{phone1.additionalFeatures}}
+          </td>
+          <td class="col-md-6">
+              {{phone2.additionalFeatures}}
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="col-md-6">
-      <h1>{{phone2.name}}</h1>
-
-      <p>{{phone2.description}}</p>
-    </div>
   </div>
-</div>
