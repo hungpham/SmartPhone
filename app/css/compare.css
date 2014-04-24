@@ -30,7 +30,7 @@
 .compare-wrap table{ width: 100%}
 
 /*detail page*/
-.detail-page .phone-images{ margin-right: 30px; height: auto; overflow: hidden; text-align: center;}
+.detail-page .phone-images{ margin-right: 30px; overflow: hidden; text-align: center;}
 .detail-page .phone-text{ overflow: hidden;}
 .detail-page  h1.name{ font-size: 25px;}
 .detail-page  p.desc{font-size: 17px;}
