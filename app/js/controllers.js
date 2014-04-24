@@ -96,6 +96,27 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
       $scope.mainImageUrl2 = imageUrl;
     }
     
+
+    /*Compare number value*/
+    $scope.valuePercent = function(number1, number2) {
+      number1 = parseInt(number1); 
+      number2 = parseInt(number2); 
+      if(angular.isNumber(number1) && angular.isNumber(number2)) {
+        return (number1 / (number1 + number2)) * 100;        
+      } else {
+        return 0;
+      }
+    },
+
+    $scope.valueColor = function(number1, number2) {
+      number1 = parseInt(number1); 
+      number2 = parseInt(number2); 
+      if(number1 <= number2) {
+        return '#9BC09A'
+      } else {
+        return '#5cb85c';
+      }
+    }
   }]);
 
 phonecatControllers.controller('PhoneSearchCtrl',['$rootScope', '$scope',function($rootScope, $scope){
