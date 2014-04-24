@@ -76,14 +76,14 @@
          <tr class="row show-grid text-align">
           <td class="col-md-6">              
               <div class="progress">
-                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.battery.talkTime, phone2.battery.talkTime)}}%; background-color:{{valueColor(phone1.battery.talkTime, phone2.battery.talkTime)}};">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.battery.talkTime, phone2.battery.talkTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.battery.talkTime, phone2.battery.talkTime)}}%; background-color:{{valueColor(phone1.battery.talkTime, phone2.battery.talkTime)}};">
                   {{phone1.battery.talkTime}}
                 </div>
               </div>
           </td>
           <td class="col-md-6">
                <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.battery.talkTime, phone1.battery.talkTime)}}%; background-color:{{valueColor(phone2.battery.talkTime, phone1.battery.talkTime)}};">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.battery.talkTime, phone1.battery.talkTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.battery.talkTime, phone1.battery.talkTime)}}%; background-color:{{valueColor(phone2.battery.talkTime, phone1.battery.talkTime)}};">
                   {{phone2.battery.talkTime}}
                 </div>
               </div>
@@ -95,11 +95,19 @@
           </td>
         </tr>
          <tr class="row show-grid text-align">
-          <td class="col-md-6">
-              {{phone1.battery.standbyTime}}
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.battery.standbyTime, phone2.battery.standbyTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.battery.standbyTime, phone2.battery.standbyTime)}}%; background-color:{{valueColor(phone1.battery.standbyTime, phone2.battery.standbyTime)}};">
+                  {{phone1.battery.standbyTime}}
+                </div>
+              </div>
           </td>
           <td class="col-md-6">
-              {{phone2.battery.standbyTime}}
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.battery.standbyTime, phone1.battery.standbyTime)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.battery.standbyTime, phone1.battery.standbyTime)}}%; background-color:{{valueColor(phone2.battery.standbyTime, phone1.battery.standbyTime)}};">
+                  {{phone2.battery.standbyTime}}
+                </div>
+              </div>
           </td>
         </tr>
         <tr class="row show-grid text-left parent">
@@ -112,12 +120,20 @@
             {{ 'detail_ram' | translate}}
           </td>
         </tr>
-         <tr class="row show-grid text-align">
-          <td class="col-md-6">
-              {{phone1.storage.ram}}
+        <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.storage.ram, phone2.storage.ram)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.storage.ram, phone2.storage.ram)}}%; background-color:{{valueColor(phone1.storage.ram, phone2.storage.ram)}};">
+                  {{phone1.storage.ram}}
+                </div>
+              </div>
           </td>
           <td class="col-md-6">
-              {{phone2.storage.ram}}
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.storage.ram, phone1.storage.ram)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.storage.ram, phone1.storage.ram)}}%; background-color:{{valueColor(phone2.storage.ram, phone1.storage.ram)}};">
+                  {{phone2.storage.ram}}
+                </div>
+              </div>
           </td>
         </tr>
         <tr class="row show-grid text-align sub">       
@@ -125,12 +141,20 @@
             {{ 'detail_internal_storage' | translate}}
           </td>
         </tr>
-         <tr class="row show-grid text-align">
-          <td class="col-md-6">
-              {{phone1.storage.flash}}
+       <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.storage.flash, phone2.storage.flash)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.storage.flash, phone2.storage.flash)}}%; background-color:{{valueColor(phone1.storage.flash, phone2.storage.flash)}};">
+                  {{phone1.storage.flash}}
+                </div>
+              </div>
           </td>
           <td class="col-md-6">
-              {{phone2.storage.flash}}
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.storage.flash, phone1.storage.flash)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.storage.flash, phone1.storage.flash)}}%; background-color:{{valueColor(phone2.storage.flash, phone1.storage.flash)}};">
+                  {{phone2.storage.flash}}
+                </div>
+              </div>
           </td>
         </tr>
         <tr class="row show-grid text-left parent">
@@ -183,10 +207,10 @@
           </td>
         </tr>
         <tr class="row show-grid text-align">
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.connectivity.infrared)}}">
               {{phone1.connectivity.infrared | checkmark}}
           </td>
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.connectivity.infrared)}}">
               {{phone2.connectivity.infrared | checkmark}}
           </td>
         </tr>
@@ -196,10 +220,10 @@
           </td>
         </tr>
         <tr class="row show-grid text-align">
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.connectivity.gps)}}">
               {{phone1.connectivity.gps | checkmark}}
           </td>
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.connectivity.gps)}}">
               {{phone2.connectivity.gps | checkmark}}
           </td>
         </tr>
@@ -266,11 +290,19 @@
           </td>
         </tr>
         <tr class="row show-grid text-align">
-          <td class="col-md-6">
-              {{phone1.sizeAndWeight.weight}}
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}}%; background-color:{{valueColor(phone1.sizeAndWeight.weight, phone2.sizeAndWeight.weight)}};">
+                  {{phone1.sizeAndWeight.weight}}
+                </div>
+              </div>
           </td>
           <td class="col-md-6">
-              {{phone2.sizeAndWeight.weight}}
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}}%; background-color:{{valueColor(phone2.sizeAndWeight.weight, phone1.sizeAndWeight.weight)}};">
+                  {{phone2.sizeAndWeight.weight}}
+                </div>
+              </div>
           </td>
         </tr>
          <tr class="row show-grid text-left parent">
@@ -310,10 +342,10 @@
           </td>
         </tr>
          <tr class="row show-grid text-align">
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.display.touchScreen)}}">
               {{phone1.display.touchScreen | checkmark}}
           </td>
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.display.touchScreen)}}">
               {{phone2.display.touchScreen | checkmark}}
           </td>
         </tr>
@@ -367,10 +399,10 @@
           </td>
         </tr>
          <tr class="row show-grid text-align">
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.hardware.fmRadio)}}">
               {{phone1.hardware.fmRadio | checkmark}}
           </td>
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.hardware.fmRadio)}}">
               {{phone2.hardware.fmRadio | checkmark}}
           </td>
         </tr>
@@ -380,10 +412,10 @@
           </td>
         </tr>
          <tr class="row show-grid text-align">
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone1.hardware.accelerometer)}}">
               {{phone1.hardware.accelerometer | checkmark}}
           </td>
-          <td class="col-md-6">
+          <td class="col-md-6" style="color: {{checkMarkColor(phone2.hardware.accelerometer)}}">
               {{phone2.hardware.accelerometer | checkmark}}
           </td>
         </tr>

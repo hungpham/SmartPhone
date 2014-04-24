@@ -41,7 +41,7 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
 
     //$scope.confirmed = false;
     $scope.phoneSelect = function(phone){   
-      console.log(phone.confirmed); 
+      //console.log(phone.confirmed); 
 
       if(phone.confirmed == true && $scope.phone1.phone_id == ''){
 
@@ -99,8 +99,8 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
 
     /*Compare number value*/
     $scope.valuePercent = function(number1, number2) {
-      number1 = parseInt(number1); 
-      number2 = parseInt(number2); 
+      number1 = number1 != '' ? parseInt(number1) : 0; 
+      number2 = number2 != '' ? parseInt(number2) : 0; 
       if(angular.isNumber(number1) && angular.isNumber(number2)) {
         return (number1 / (number1 + number2)) * 100;        
       } else {
@@ -117,12 +117,22 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
         return '#5cb85c';
       }
     }
+
+    $scope.checkMarkColor = function(checkmark) {      
+      //console.log(checkmark);
+      if(checkmark == true) {
+        return '#5cb85c'
+      } else {
+        return '#9BC09A';
+      }
+    }
+
   }]);
 
 phonecatControllers.controller('PhoneSearchCtrl',['$rootScope', '$scope',function($rootScope, $scope){
 
   $scope.search = function(){
-    console.log($scope.query);
+    //console.log($scope.query);
     $rootScope.$broadcast('search',$scope.query);
   }
 
