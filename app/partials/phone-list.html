@@ -1,4 +1,15 @@
 
+<div class="row title-top">
+    <div class="col-xs-12 col-md-8">
+        <h2>{{'title_top_home' | translate}}</h2>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <div class="btn-group" ng-controller="PhoneSortCtrl">
+            <select ng-model="orderProp" ng-change="sort()" class="form-control" ng-options="key as value for (key,value) in orderProps"></select>
+        </div>
+    </div>
+</div>
+
 <div class="row wrap-compare">
     <div class="col-md-2"></div>
     <div class="col-md-8">
