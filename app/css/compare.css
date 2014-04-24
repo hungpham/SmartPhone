@@ -29,7 +29,9 @@
 .compare-wrap .product-img .col-md-6{ text-align: center; padding-bottom: 30px; padding-top: 30px;}
 .compare-wrap table{ width: 100%}
 .compare-wrap .show-grid td td{border: none !important;}
-/*detail page*/
+
+/*=======detail page=========*/
+.detail-page{margin-top: 30px;}
 .detail-page .phone-images{ margin-right: 30px; overflow: hidden; text-align: center;}
 .detail-page .phone-text{ overflow: hidden;}
 .detail-page  h1.name{ font-size: 25px;}
