@@ -1,6 +1,14 @@
 <div class="wrapper-page">      
   <div class="compare-wrap">   
       <table>
+		<tr class="row show-grid title">
+          <td class="col-md-6">
+            {{phone1.name}}
+          </td>
+          <td class="col-md-6">
+            {{phone2.name}}
+          </td>
+        </tr>
         <tr class="row show-grid product-img">
           <td class="col-md-6" align="center" >
               <img src="img/phones/droid-2-global-by-motorola.0.jpg" alt="">
@@ -13,6 +21,27 @@
           </td>
           <td class="col-md-6">
             {{phone2.name}}
+          </td>
+        </tr>
+		<tr class="row show-grid text-align sub">       
+          <td colspan="2" class="col-md-6">
+            {{ 'detail_price' | translate}}
+          </td>
+        </tr>
+         <tr class="row show-grid text-align">
+          <td class="col-md-6">              
+              <div class="progress">
+                <div class="progress-bar progress-bar-success right" role="progressbar" aria-valuenow="{{valuePercent(phone1.price, phone2.price)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone1.price, phone2.price)}}%; background-color:{{valueColor(phone1.price, phone2.price)}};">
+                  {{phone1.price | currency}}
+                </div>
+              </div>
+          </td>
+          <td class="col-md-6">
+               <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{valuePercent(phone2.price, phone1.price)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{valuePercent(phone2.price, phone1.price)}}%; background-color:{{valueColor(phone2.price, phone1.price)}};">
+                  {{phone2.price | currency}}
+                </div>
+              </div>
           </td>
         </tr>
         <tr class="row show-grid text-left parent">
@@ -461,6 +490,24 @@
           </td>
           <td class="col-md-6">
               {{phone2.additionalFeatures}}
+          </td>
+        </tr>
+		<tr class="row show-grid title">
+          <td class="col-md-12" colspan="2">
+            <h3>{{ 'detail_your_opinion' | translate}} </h3>
+			</td>
+        </tr>
+		<tr class="row show-grid title">
+          <td class="col-md-6">
+            <input type="radio" name="phone-choose" id="phone-1" > <label for="phone-1">{{phone1.name}}</label>
+          </td>
+          <td class="col-md-6">
+            <input type="radio" name="phone-choose" id="phone-2" > <label for="phone-2">{{phone2.name}}</label>
+          </td>
+        </tr>
+		<tr class="row show-grid title">
+          <td class="col-md-12" colspan="2">
+            <button type="submit" class="btn btn-success" ng-click="chooseSubmit()">{{ 'compare_choose_button' | translate }}</button>
           </td>
         </tr>
       </table>

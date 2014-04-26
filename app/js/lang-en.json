@@ -35,11 +35,14 @@
 	"detail_primary": "Primary",
 	"detail_features": "Features",
 	"detail_additional_features": "Additional Features",
-	"compare_title": "FREE SHIPPING ON ALL OF OUR BEST PHONES",
+	"compare_title": "Smartphone Project with AngularJS",
 	"compare_intro": "SELECT TWO PHONES TO COMPARE",
 	"compare_button": "Compare",
 	"compare_phone1": "phone1",
 	"compare_phone2": "phone2",
 	"compare_search_input": "Search",
-	"compare_search_button": "Search"
+	"compare_search_button": "Search",
+	"compare_choose_button": "Submit",
+	"detail_your_opinion": "Your opinion?",
+	"detail_price": "Price"
 }

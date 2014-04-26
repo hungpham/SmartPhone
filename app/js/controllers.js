@@ -65,6 +65,21 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
       }  
      
     }
+	
+	$scope.phoneLink = function(phone){
+		if(phone.id == $scope.phone1.phone_id || phone.id == $scope.phone2.phone_id) {
+			if(phone.confirmed) {
+				phone.confirmed = false;
+			} else {
+				phone.confirmed = true;
+			}
+		} else if($scope.phone1.phone_id != '' && $scope.phone2.phone_id != '') {
+			return false;
+		} else {
+			phone.confirmed = true;
+		}
+		$scope.phoneSelect(phone);
+	}
 
   }]);
 
@@ -126,7 +141,11 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
         return '#9BC09A';
       }
     }
-
+	
+    $scope.chooseSubmit = function() {      
+      alert("Please wait a moment! Server side processing....");
+    }
+	
   }]);
 
 phonecatControllers.controller('PhoneSearchCtrl',['$rootScope', '$scope',function($rootScope, $scope){
