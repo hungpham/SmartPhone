@@ -21,7 +21,7 @@
   </div>
 
  <table class="specs">       
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">        
         {{ 'detail_availability_networks' | translate}}
       </td>         
@@ -36,7 +36,7 @@
         </span>          
       </td>
     </tr>
-     <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
         {{ 'detail_battery' | translate}}
       </td>         
@@ -65,7 +65,7 @@
          {{phone.battery.standbyTime}} 
       </td>
     </tr>
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_storage_memory' | translate}}
       </td>         
@@ -86,7 +86,7 @@
          {{phone.storage.flash}}
       </td>
     </tr>
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_connectivity' | translate}}
       </td>         
@@ -119,7 +119,7 @@
       <td class="col-md-6 sub">
           {{ 'detail_infrared' | translate}}
       </td>
-      <td class="col-md-6 value">   
+      <td class="col-md-6 value" style="color: {{checkMarkColor(phone.connectivity.infrared)}}">   
            {{phone.connectivity.infrared | checkmark}}
       </td>
     </tr>
@@ -127,11 +127,11 @@
       <td class="col-md-6 sub">
           {{ 'detail_gps' | translate}}
       </td>
-      <td class="col-md-6 value">   
+      <td class="col-md-6 value" style="color: {{checkMarkColor(phone.connectivity.gps)}}">   
            {{phone.connectivity.gps | checkmark}}
       </td>
     </tr>
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_android' | translate}}
       </td>         
@@ -152,7 +152,7 @@
          {{phone.android.ui}}
       </td>
     </tr>
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_size_weight' | translate}}
       </td>         
@@ -175,7 +175,7 @@
          {{phone.sizeAndWeight.weight}}
       </td>
     </tr>
-     <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_display' | translate}}
       </td>         
@@ -200,11 +200,11 @@
       <td class="col-md-6 sub">
         {{ 'detail_touch_screen' | translate}}
       </td>
-      <td class="col-md-6 value">   
+      <td class="col-md-6 value" style="color: {{checkMarkColor(phone.display.touchScreen)}}" >   
           {{phone.display.touchScreen | checkmark}}
       </td>
     </tr>
-     <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_hardware' | translate}}
       </td>         
@@ -237,7 +237,7 @@
       <td class="col-md-6 sub">
         {{ 'detail_fm_radio' | translate}}
       </td>
-      <td class="col-md-6 value">   
+      <td class="col-md-6 value"  style="color: {{checkMarkColor(phone.hardware.fmRadio)}}" >   
           {{phone.hardware.fmRadio}}
       </td>
     </tr>
@@ -245,11 +245,11 @@
       <td class="col-md-6 sub">
         {{ 'detail_accelerometer' | translate}}
       </td>
-      <td class="col-md-6 value">   
+      <td class="col-md-6 value"  style="color: {{checkMarkColor(phone.hardware.accelerometer)}}" >   
           {{phone.hardware.accelerometer}}
       </td>
     </tr>
-    <tr>
+    <tr class="title">
       <td colspan="2" class="col-md-6 parent">
          {{ 'detail_camera' | translate}}
       </td>         
@@ -279,5 +279,6 @@
       </td>
     </tr>    
   </table>
-
+  <a href="#/phones" class="btn btn-primary btn-lg" role="button">{{'back_to_list_button' | translate}}</a>
+  <!--a href="javascript:void(0);" class="btn btn-primary btn-lg" role="button">{{'add_to_compare_button' | translate}}</a-->
 </div>

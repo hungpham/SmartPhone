@@ -35,7 +35,7 @@
 	"detail_primary": "fr Primary",
 	"detail_features": "fr Features",
 	"detail_additional_features": "fr Additional Features",
-	"compare_title": "fr Smartphone Project with AngularJS",
+	"compare_title": "fr Project with AngularJS",
 	"compare_intro": "fr SELECT TWO PHONES TO COMPARE",
 	"compare_button": "fr Compare",
 	"compare_phone1": "fr phone1",
@@ -43,6 +43,9 @@
 	"compare_search_input": "fr Search",
 	"compare_search_button": "fr Search",
 	"compare_choose_button": "fr Submit",
+	"add_to_compare_button": "fr Add to Compare",
+	"back_to_list_button": "fr Back To List",
 	"detail_your_opinion": "fr Your opinion?",
 	"detail_price": "fr Price"
+
 }

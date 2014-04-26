@@ -31,7 +31,10 @@
   padding: 0;
   overflow: hidden;
 }
-.item-phone{ 
+.list-style-button {
+  text-align: right;
+}
+.item-phone img{ 
   width: 260px;
   height: 455px;/*398*/
   overflow: hidden;
@@ -40,6 +43,22 @@
 .item-phone img{
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+.listthumb li{
+  min-height: 395px;
+}
+
+.liststyle ul li {
+  clear:both;
+  text-align: left;
+}
+.liststyle .item-phone img{
+  float:left;
+  margin-right: 20px;
+}
+.liststyle .product-card  .mfr{ 
   display: block;
 }
 .product-card .model{
@@ -52,7 +71,7 @@
 .product-card .mfr{
   font-size: 13px;
   font-weight: 400;
-  display: block;
+  display: none;
   color: #5a6a7a;
 }
 .wrap-compare{padding-bottom: 40px;}

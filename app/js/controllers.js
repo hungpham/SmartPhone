@@ -14,6 +14,19 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
 
     });
     
+    $scope.listTypeThumb = true; 
+    $scope.listTypeList = false; 
+    $scope.listDisplay = function(type) {
+       if(type == 'thumb') {
+        $scope.listTypeThumb = true; 
+        $scope.listTypeList = false;         
+       } else {
+        $scope.listTypeThumb = false; 
+        $scope.listTypeList = true; 
+       }
+       return $scope.listTypeThumb;
+    }
+
     $scope.orderProp = 'age'; 
     //console.log($scope.phones);   
     /*default value for compare*/
@@ -92,6 +105,13 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
     } 
+    $scope.checkMarkColor = function(checkmark) {      
+      if(checkmark == true) {
+        return '#5cb85c'
+      } else {
+        return '#9BC09A';
+      }
+    }
   }]);
 
 phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'Phone',

@@ -1,9 +1,6 @@
 
 <div class="row title-top">
-    <div class="col-xs-12 col-md-8">
-        <h2>{{'compare_title' | translate}}</h2>
-    </div>
-    <div class="col-xs-6 col-md-4">
+    <div class="col-xs-6 col-md-6">
         <div class="btn-group" ng-controller="PhoneSortCtrl">
             <select ng-model="orderProp" ng-change="sort()" class="form-control" ng-options="key as value for (key,value) in orderProps"></select>
         </div>
@@ -38,18 +35,25 @@
 </div>
 
 <div class="row">
-  <ul class="product-card">
-    <li class="col-xs-6 col-sm-3" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-        <div class="item-phone">
-            <a href="javascript:void(0);" ng-model="phone.confirmed" ng-click="phoneLink(phone)"><img ng-src="{{phone.imageUrl}}" alt="" /></a>
-            <a href="#/phones/{{phone.id}}"><span class="model">{{phone.name}}</span></a>
-            <small>
-                <span class="mfr">{{phone.snippet}}</span> 
-            </small> 
-            <input type="checkbox" ng-disabled="phone1.phone_id && phone2.phone_id && (phone.id != phone1.phone_id && phone.id != phone2.phone_id)" ng-model="phone.confirmed" ng-change="phoneSelect(phone)" class="choose-phone" id="{{phone.id}}"> 
-        </div>
-    </li>
-  </ul>
+    <div class="list-style-button bs-glyphicons">
+    <a ng-class="{active: listTypeThumb}" href="javascript:void(0);" ng-click="listDisplay('thumb')" class="btn btn-default " role="button"><span class="glyphicon glyphicon-th"></span></a>
+    <a ng-class="{active: !listTypeThumb}"href="javascript:void(0);" ng-click="listDisplay('list')" class="btn btn-default " role="button"><span class="glyphicon glyphicon-th-list"></span></a>
+    </div>
+    <div ng-class="{listthumb: listTypeThumb, liststyle: !listTypeThumb}">
+
+      <ul class="product-card">
+        <li ng-class="{'col-xs-6 col-sm-3': listTypeThumb}" class="" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+            <div class="item-phone">
+                <a  href="javascript:void(0);" ng-model="phone.confirmed" ng-click="phoneLink(phone)"><img ng-src="{{phone.imageUrl}}" alt="" /></a>
+                <a href="#/phones/{{phone.id}}"><span class="model">{{phone.name}}</span></a>
+                <small>
+                    <span class="mfr">{{phone.snippet}}</span> 
+                </small> 
+                <input type="checkbox" ng-disabled="phone1.phone_id && phone2.phone_id && (phone.id != phone1.phone_id && phone.id != phone2.phone_id)" ng-model="phone.confirmed" ng-change="phoneSelect(phone)" class="choose-phone" id="{{phone.id}}"> 
+            </div>
+        </li>
+      </ul>
+    </div>  
 </div>  
 
 

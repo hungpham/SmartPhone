@@ -6,7 +6,8 @@
         "name": "Motorola XOOM\u2122 with Wi-Fi", 
         "price": 305,
         "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
 
     }, 
     {
@@ -16,7 +17,8 @@
         "name": "MOTOROLA XOOM\u2122", 
         "price":205,
         "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb).",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 2, 
@@ -26,7 +28,8 @@
         "name": "MOTOROLA ATRIX\u2122 4G", 
         "price": 150,
         "snippet": "MOTOROLA ATRIX 4G the world's most powerful smartphone.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 3, 
@@ -35,7 +38,8 @@
         "name": "Dell Streak 7", 
         "price": 300,
         "snippet": "Introducing Dell\u2122 Streak 7. Share photos, videos and movies together. It\u2019s small enough to carry around, big enough to gather around.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Dell"
     }, 
     {
         "age": 4, 
@@ -45,7 +49,8 @@
         "name": "Samsung Gem\u2122", 
         "price": 150,
         "snippet": "The Samsung Gem\u2122 brings you everything that you would expect and more from a touch display smart phone \u2013 more apps, more features and a more affordable price.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Samsung"
     }, 
     {
         "age": 5, 
@@ -55,7 +60,8 @@
         "name": "Dell Venue", 
         "price": 260,
         "snippet": "The Dell Venue; Your Personal Express Lane to Everything",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Dell"
     }, 
     {
         "age": 6, 
@@ -65,7 +71,8 @@
         "name": "Nexus S", 
         "price": 345,
         "snippet": "Fast just got faster with Nexus S. A pure Google experience, Nexus S is the first phone to run Gingerbread (Android 2.3), the fastest version of Android yet.",
-        "confirmed":false        
+        "confirmed":false,
+        "category": "Google"        
     }, 
     {
         "age": 7, 
@@ -75,7 +82,8 @@
         "name": "LG Axis", 
         "price": "345",
         "snippet": "Android Powered, Google Maps Navigation, 5 Customizable Home Screens",
-        "confirmed":false
+        "confirmed":false,
+        "category": "LG"
     }, 
     {
         "age": 8, 
@@ -84,7 +92,8 @@
         "name": "Samsung Galaxy Tab\u2122", 
         "price": 300,
         "snippet": "Feel Free to Tab\u2122. The Samsung Galaxy Tab\u2122 brings you an ultra-mobile entertainment experience through its 7\u201d display, high-power processor and Adobe\u00ae Flash\u00ae Player compatibility.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Samsung"
 
     }, 
     {
@@ -95,7 +104,8 @@
         "name": "Samsung Showcase\u2122 a Galaxy S\u2122 phone", 
         "price": 200,
         "snippet": "The Samsung Showcase\u2122 delivers a cinema quality experience like you\u2019ve never seen before. Its innovative 4\u201d touch display technology provides rich picture brilliance, even outdoors",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Samsung"
     }, 
     {
         "age": 10, 
@@ -105,7 +115,8 @@
         "name": "DROID\u2122 2 Global by Motorola", 
         "price": "315",
         "snippet": "The first smartphone with a 1.2 GHz processor and global capabilities.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 11, 
@@ -115,7 +126,8 @@
         "name": "DROID\u2122 Pro by Motorola", 
         "price": "145",
         "snippet": "The next generation of DOES.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 12, 
@@ -125,7 +137,8 @@
         "name": "MOTOROLA BRAVO\u2122 with MOTOBLUR\u2122", 
         "price": 305,
         "snippet": "An experience to cheer about.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 13, 
@@ -135,7 +148,8 @@
         "name": "Motorola DEFY\u2122 with MOTOBLUR\u2122", 
         "price": 245,
         "snippet": "Are you ready for everything life throws your way?",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }, 
     {
         "age": 14, 
@@ -145,7 +159,8 @@
         "name": "T-Mobile myTouch 4G", 
         "price": 345,
         "snippet": "The T-Mobile myTouch 4G is a premium smartphone designed to deliver blazing fast 4G speeds so that you can video chat from practically anywhere, with or without Wi-Fi.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "myTouch"
     }, 
     {
         "age": 15, 
@@ -155,7 +170,8 @@
         "name": "Samsung Mesmerize\u2122 a Galaxy S\u2122 phone", 
         "price": 145,
         "snippet": "The Samsung Mesmerize\u2122 delivers a cinema quality experience like you\u2019ve never seen before. Its innovative 4\u201d touch display technology provides rich picture brilliance,even outdoors",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Samsung"
     }, 
     {
         "age": 16, 
@@ -165,7 +181,8 @@
         "name": "SANYO ZIO", 
         "price": 345,
         "snippet": "The Sanyo Zio by Kyocera is an Android smartphone with a combination of ultra-sleek styling, strong performance and unprecedented value.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "SANYO"
     }, 
     {
         "age": 17, 
@@ -174,7 +191,8 @@
         "name": "Samsung Transform\u2122", 
         "price": 500,
         "snippet": "The Samsung Transform\u2122 brings you a fun way to customize your Android powered touch screen phone to just the way you like it through your favorite themed \u201cSprint ID Service Pack\u201d.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Samsung"
     }, 
     {
         "age": 18, 
@@ -183,7 +201,8 @@
         "name": "T-Mobile G2", 
         "price": 140,
         "snippet": "The T-Mobile G2 with Google is the first smartphone built for 4G speeds on T-Mobile's new network. Get the information you need, faster than you ever thought possible.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Google"
     }, 
     {
         "age": 19, 
@@ -192,6 +211,7 @@
         "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
         "price": 150,
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service.",
-        "confirmed":false
+        "confirmed":false,
+        "category": "Motorola"
     }
 ]

@@ -11,9 +11,9 @@
         </tr>
         <tr class="row show-grid product-img">
           <td class="col-md-6" align="center" >
-              <img src="img/phones/droid-2-global-by-motorola.0.jpg" alt="">
+              <img src="{{phone1.images[0]}}" alt="{{phone1.name}}">
           </td>
-          <td class="col-md-6" align="center"><img src="img/phones/motorola-defy-with-motoblur.0.jpg" alt=""></td>
+          <td class="col-md-6" align="center"><img src="{{phone2.images[0]}}" alt="{{phone2.name}}"></td>
         </tr>
         <tr class="row show-grid title">
           <td class="col-md-6">
@@ -505,11 +505,15 @@
             <input type="radio" name="phone-choose" id="phone-2" > <label for="phone-2">{{phone2.name}}</label>
           </td>
         </tr>
-		<tr class="row show-grid title">
+    <tr class="row show-grid title">
           <td class="col-md-12" colspan="2">
             <button type="submit" class="btn btn-success" ng-click="chooseSubmit()">{{ 'compare_choose_button' | translate }}</button>
           </td>
         </tr>
       </table>
+      <div class="row">
+        <a href="#/phones" class="btn btn-primary btn-lg" role="button">{{'back_to_list_button' | translate}}</a>
+        
+      </div>
     </div>
   </div>
