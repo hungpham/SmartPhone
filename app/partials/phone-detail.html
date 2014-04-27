@@ -238,7 +238,7 @@
         {{ 'detail_fm_radio' | translate}}
       </td>
       <td class="col-md-6 value"  style="color: {{checkMarkColor(phone.hardware.fmRadio)}}" >   
-          {{phone.hardware.fmRadio}}
+          {{phone.hardware.fmRadio | checkmark}}
       </td>
     </tr>
      <tr>       
@@ -246,7 +246,7 @@
         {{ 'detail_accelerometer' | translate}}
       </td>
       <td class="col-md-6 value"  style="color: {{checkMarkColor(phone.hardware.accelerometer)}}" >   
-          {{phone.hardware.accelerometer}}
+          {{phone.hardware.accelerometer | checkmark}}
       </td>
     </tr>
     <tr class="title">
