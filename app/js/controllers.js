@@ -10,11 +10,12 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
     /*above is shortern of bellow:*/
     
     $http.get('phones/phones.json').success(function(data) {
-      $scope.phones = data;
+      $scope.phones = data;      
 
     });
     
-    $scope.orderProp = 'age'; 
+    // $scope.orderProp = 'age'; 
+    $scope.orderProp = 'price';
     //console.log($scope.phones);   
     /*default value for compare*/
 
@@ -28,8 +29,6 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
     };
 
     $scope.$on('search', function(e, query) {
-      // console.log(e);
-      // console.log('Searching...', query);
       $scope.query = query;
     });
 
@@ -37,7 +36,8 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
       // console.log(e);
       // console.log('Searching...', orderProp);
       $scope.orderProp = orderProp;
-    });
+    });    
+ 
 
     //$scope.confirmed = false;
     $scope.phoneSelect = function(phone){   
@@ -65,6 +65,7 @@ var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.t
       }  
      
     }
+    
 
   }]);
 
@@ -145,16 +146,12 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
     $rootScope.$broadcast('sort',$scope.orderProp);
   }
 
-  $scope.orderProp = 'age';
-  $scope.orderProps = {
-    'name':'Alphabetical',
-    'age':'Newest'
+  $scope.orderProp = 'price';
+  $scope.orderProps= {
+    'price':'Price',
+    'name':'Alphabetical', 
+    'age':'Newest'   
   };
-  
-  // $scope.search = function(){
-  //   console.log($scope.query);
-  //   $rootScope.$broadcast('search',$scope.query);
-  // }
 
 }]);
   phonecatControllers.config(function ($translateProvider) {       
@@ -164,7 +161,7 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
     });
       
       $translateProvider.preferredLanguage('en');
-      });
+  });
 
   // phonecatControllers.controller('langCtrl', function ($scope, $translate) {
   //   $scope.changeLanguage = function (key) {
@@ -194,4 +191,8 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
         $translate.use(key);
       };
         
-  })
+  });
+
+
+  
+  

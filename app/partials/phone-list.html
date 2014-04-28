@@ -43,13 +43,17 @@
         <div class="item-phone">
             <a href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}" alt="" /></a>
             <a href="#/phones/{{phone.id}}"><span class="model">{{phone.name}}</span></a>
-            <small>
+            <p class="price">{{phone.price | currency }}</p>
+            <!-- <small>
                 <span class="mfr">{{phone.snippet}}</span> 
-            </small> 
+            </small>  -->
             <input type="checkbox" ng-disabled="phone1.phone_id && phone2.phone_id && (phone.id != phone1.phone_id && phone.id != phone2.phone_id)" ng-model="phone.confirmed" ng-change="phoneSelect(phone)" class="choose-phone" id="{{phone.id}}"> 
         </div>
     </li>
   </ul>
 </div>  
+
+
+
 
 

@@ -2,6 +2,11 @@
 .wrapper-page h1.text-hide{margin: 0}
 .wrapper-page .navbar-inverse .navbar-brand{
   color: #fff;
+  text-indent: -9999em;
+  background: url(../img/logo.png) no-repeat;
+  display: block;
+  width: 200px;
+  height: 50px;
 }
 .top-right-mb{}
 .top-right-mb .btn-group{
@@ -18,6 +23,7 @@
 .product-card .item-phone{
   border: 1px solid transparent;
   margin-bottom: 30px;
+  position: relative;
 }
 .product-card .item-phone img{
   border-radius:6px;
@@ -33,7 +39,7 @@
 }
 .item-phone{ 
   width: 260px;
-  height: 455px;/*398*/
+  height: 400px;/*398*/
   overflow: hidden;
 }
 .item-phone a:hover{text-decoration: none;}
@@ -123,8 +129,14 @@
  /* margin-right: 10px;*/
 }
 .item-phone input[type=checkbox]{
-  margin-top: 10px;
+  margin-top: 0;
   width: 20px;
   height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.item-phone .price{
+  color: #5CB85C;
 }
 
