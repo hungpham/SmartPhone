@@ -186,6 +186,7 @@ phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function(
 
   $scope.orderProp = 'age';
   $scope.orderProps = {
+    'price':'Price',
     'name':'Alphabetical',
     'age':'Newest'
   };

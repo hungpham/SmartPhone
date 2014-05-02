@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Google Phone Gallery</title>
+    <title>{{'compare_title' | translate}}</title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/docs.min.css">
@@ -29,8 +29,6 @@
     <script src="js/filters.js"></script>
     <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
-
-  <!--<script src="js/product-detail.js"></script> --> 
 </head>
 
 <body>
@@ -50,70 +48,29 @@
                           ng-options="opt as opt.name for opt in languages" class="form-control">
                               <option>--</option>                  
                             </select>
-                            <!-- "selected is" {{ myOption.name }}. -->
                         </div>
  				             
                     </div>
 
                     <form class="navbar-form navbar-right" role="form">
-                        <div class="form-group"> 
-                            <!-- <span class="glyphicon glyphicon-search search-icon"></span> -->
+                        <div class="form-group">
                             <input type="text" placeholder="{{ 'compare_search_input' | translate }}" class="form-control" ng-model="query">
                             <button type="submit" class="btn btn-success" ng-click="search()">{{ 'compare_search_button' | translate }}</button>
                         </div>
                     </form>
 
                 </div>
-                <!--/.navbar-collapse -->
             </div>
         </div>
 
         <div class="jumbotron">
-            <div class="container"> 
-                <!-- Example row of columns -->
-
-                <!-- <div class="row title-top">
-                    <div class="col-xs-12 col-md-8">
-                        <h2>{{ 'compare_title' | translate }}</h2>
-                    </div>
-                    <div class="col-xs-6 col-md-4">
-                        <div class="btn-group" ng-controller="PhoneSortCtrl">
-                            <select ng-model="orderProp" ng-change="sort()" class="form-control" ng-options="key as value for (key,value) in orderProps"></select>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="row wrap-compare">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <h3>{{ 'compare_intro' | translate }}</h3>
-                        <div class="form-group">
-                            <div class="inputs-container">
-                                <div class="input-container">
-                                    <input type="text" class="form-control product1" placeholder="{{ 'compare_phone1' | translate }}">
-                                    <div class="error-message" id="product1-error"></div>
-                                </div>
-                                <div class="vs">vs</div>
-                                <div class="input-container">
-                                    <input type="text" class="form-control product2" placeholder="{{ 'compare_phone2' | translate }}">
-                                    <div class="error-message" id="product2-error"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <button class="large" type="submit" value="compare">Compare</button>                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div> -->
-
+            <div class="container">                 
                 <div ng-view class="view-frame"></div>
-
             </div>
         </div>
         <div class="footer">
             <p>&copy; Pyco - Frontend - Angular Training 2014 <br />
-            Credit: Dung.Tran, Nha.Ho, Hung.Pham, Trinh.Pham, Khoa.Do</p>
+            Team Members: Dung.Tran, Nha.Ho, Hung.Pham, Trinh.Pham, Khoa.Do</p>
 
         </div>
     </div>
