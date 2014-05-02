@@ -17,18 +17,17 @@
         <div class="form-group">
             <div class="inputs-container">
                 <div class="input-container">
-                    <input type="text" class="form-control product1" placeholder="{{'compare_phone1' | translate}}" ng-model="phone1.phone_name">
+                    <input ng-disabled="phone1.phone_id== ''" type="text" class="form-control product1" placeholder="{{'compare_phone1' | translate}}" ng-model="phone1.phone_name" readonly="readonly">
                     <div class="error-message" id="product1-error"></div>
                 </div>
                 <div class="vs">vs</div>
                 <div class="input-container">
-                    <input type="text" class="form-control product2" placeholder="{{'compare_phone2' | translate}}" ng-model="phone2.phone_name">
+                    <input ng-disabled="phone2.phone_id== ''" type="text" class="form-control product2" placeholder="{{'compare_phone2' | translate}}" ng-model="phone2.phone_name"  readonly="readonly">
                     <div class="error-message" id="product2-error"></div>
                 </div>
             </div>
             <div class="row">
-                <!-- <button class="large" type="submit" value="compare">{{'compare' | translate}}</button>  -->
-                <a href="#/phone1/{{phone1.phone_id}}/phone2/{{phone2.phone_id}}" class="btn btn-primary btn-lg" role="button">{{'compare_button' | translate}}</a>
+                <a ng-disabled="phone1.phone_id== '' || phone2.phone_id == ''" href="#/phone1/{{phone1.phone_id}}/phone2/{{phone2.phone_id}}" class="btn btn-primary btn-lg" role="button">{{'compare_button' | translate}}</a>
                 
             </div>
 

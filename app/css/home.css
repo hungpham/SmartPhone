@@ -107,6 +107,7 @@
 }
 .wrap-compare input.product1{
   width: 330px;
+  text-align: right;
 }
 .wrap-compare input.product2{
   width: 330px;
