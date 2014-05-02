@@ -2,20 +2,98 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var phonecatControllers = angular.module('phonecatControllers', ['pascalprecht.translate']);
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
+  phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', '$http', function($scope, Phone, $http) {
+    //console.log()
     $scope.phones = Phone.query();
     /*above is shortern of bellow:*/
-    /*
+    
     $http.get('phones/phones.json').success(function(data) {
       $scope.phones = data;
-    });
-    */
 
-    $scope.orderProp = 'age';
-    console.log($scope.phones);
+    });
+    
+    $scope.listTypeThumb = true; 
+    $scope.listTypeList = false; 
+    $scope.listDisplay = function(type) {
+       if(type == 'thumb') {
+        $scope.listTypeThumb = true; 
+        $scope.listTypeList = false;         
+       } else {
+        $scope.listTypeThumb = false; 
+        $scope.listTypeList = true; 
+       }
+       return $scope.listTypeThumb;
+    }
+
+    $scope.orderProp = 'age'; 
+    //console.log($scope.phones);   
+    /*default value for compare*/
+
+    $scope.phone1 = {
+      phone_name: '',
+      phone_id: ''
+    };
+    $scope.phone2 = {
+      phone_name: '',
+      phone_id: ''
+    };
+
+    $scope.$on('search', function(e, query) {
+      // console.log(e);
+      // console.log('Searching...', query);
+      $scope.query = query;
+    });
+
+    $scope.$on('sort', function(e, orderProp) {
+      // console.log(e);
+      // console.log('Searching...', orderProp);
+      $scope.orderProp = orderProp;
+    });
+
+    //$scope.confirmed = false;
+    $scope.phoneSelect = function(phone){   
+      //console.log(phone.confirmed); 
+
+      if(phone.confirmed == true && $scope.phone1.phone_id == ''){
+
+        $scope.phone1.phone_id = phone.id;
+        $scope.phone1.phone_name = phone.name;
+      }
+      else if(phone.confirmed == true && $scope.phone2.phone_id == ''){
+
+        $scope.phone2.phone_id = phone.id;
+        $scope.phone2.phone_name = phone.name;
+      } 
+      else if(phone.confirmed == false && $scope.phone1.phone_id == phone.id ){
+
+        $scope.phone1.phone_id = '';
+        $scope.phone1.phone_name = '';
+      } 
+      else if(phone.confirmed == false && $scope.phone2.phone_id == phone.id){
+
+        $scope.phone2.phone_id = ''; 
+        $scope.phone2.phone_name = '';
+      }  
+     
+    }
+	
+	$scope.phoneLink = function(phone){
+		if(phone.id == $scope.phone1.phone_id || phone.id == $scope.phone2.phone_id) {
+			if(phone.confirmed) {
+				phone.confirmed = false;
+			} else {
+				phone.confirmed = true;
+			}
+		} else if($scope.phone1.phone_id != '' && $scope.phone2.phone_id != '') {
+			return false;
+		} else {
+			phone.confirmed = true;
+		}
+		$scope.phoneSelect(phone);
+	}
+
   }]);
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
@@ -26,6 +104,13 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
+    } 
+    $scope.checkMarkColor = function(checkmark) {      
+      if(checkmark == true) {
+        return '#5cb85c'
+      } else {
+        return '#9BC09A';
+      }
     }
   }]);
 
@@ -46,4 +131,107 @@ phonecatControllers.controller('PhoneCompareCtrl', ['$scope', '$routeParams', 'P
       $scope.mainImageUrl2 = imageUrl;
     }
     
+
+    /*Compare number value*/
+    $scope.valuePercent = function(number1, number2) {
+      number1 = number1 != '' ? parseInt(number1) : 0; 
+      number2 = number2 != '' ? parseInt(number2) : 0; 
+      if(angular.isNumber(number1) && angular.isNumber(number2)) {
+        return (number1 / (number1 + number2)) * 100;        
+      } else {
+        return 0;
+      }
+    },
+
+    $scope.valueColor = function(number1, number2) {
+      number1 = parseInt(number1); 
+      number2 = parseInt(number2); 
+      if(number1 <= number2) {
+        return '#9BC09A'
+      } else {
+        return '#5cb85c';
+      }
+    }
+
+    $scope.checkMarkColor = function(checkmark) {      
+      //console.log(checkmark);
+      if(checkmark == true) {
+        return '#5cb85c'
+      } else {
+        return '#9BC09A';
+      }
+    }
+	
+    $scope.chooseSubmit = function() {      
+      alert("Please wait a moment! Server side processing....");
+    }
+	
   }]);
+
+phonecatControllers.controller('PhoneSearchCtrl',['$rootScope', '$scope',function($rootScope, $scope){
+
+  $scope.search = function(){
+    //console.log($scope.query);
+    $rootScope.$broadcast('search',$scope.query);
+  }
+
+}]);
+
+phonecatControllers.controller('PhoneSortCtrl',['$rootScope', '$scope',function($rootScope, $scope){
+
+  $scope.sort = function(){
+    //console.log($scope.orderProp)
+    $rootScope.$broadcast('sort',$scope.orderProp);
+  }
+
+  $scope.orderProp = 'age';
+  $scope.orderProps = {
+    'price':'Price',
+    'name':'Alphabetical',
+    'age':'Newest'
+  };
+  
+  // $scope.search = function(){
+  //   console.log($scope.query);
+  //   $rootScope.$broadcast('search',$scope.query);
+  // }
+
+}]);
+  phonecatControllers.config(function ($translateProvider) {       
+      $translateProvider.useStaticFilesLoader({
+      prefix: 'js/lang-',
+      suffix: '.json'
+    });
+      
+      $translateProvider.preferredLanguage('en');
+      });
+
+  // phonecatControllers.controller('langCtrl', function ($scope, $translate) {
+  //   $scope.changeLanguage = function (key) {
+  //     $translate.use(key);
+  //   };
+  // });
+
+  phonecatControllers.controller('langCtrl', 
+    function($scope, $translate){
+
+      $scope.languages= [
+          {
+            "id": "en",
+            "name": "English"
+          },
+          {
+            "id": "fr",            
+            "name": "France"            
+          },
+        ];    
+
+      $scope.myOption = $scope.languages[0];
+      
+      $scope.changeLanguage = function(key) {
+        key = $scope.myOption.id;
+        // console.log(key);
+        $translate.use(key);
+      };
+        
+  })

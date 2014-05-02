@@ -30,3 +30,6 @@ phonecatApp.config(['$routeProvider',
         redirectTo: '/phones'
       });
   }]);
+
+phonecatApp.constant('COLOR_FALSE', '#9BC09A');
+phonecatApp.constant('COLOR_TRUE', '#5cb85c');
